@@ -11,7 +11,7 @@ def start(update, context):
 
 if __name__ == '__main__' :
     
-    updater = Updater(token='2097638862:AAEmflVzqB8L6ux6r02hDm10TMhpkVNSTVs', use_context=True)
+    updater = Updater(token='TuToken', use_context=True)
 
     dp = updater.dispatcher
     
