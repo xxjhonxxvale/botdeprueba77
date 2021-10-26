@@ -1,6 +1,6 @@
 import os
 
-os.environ['token']
+os.environ['TOKEN']
 from telegram import Update
 from telegram.ext import dispatcher, Updater, CommandHandler, MessageHandler, Filters
 
@@ -19,7 +19,7 @@ if __name__ == '__main__' :  #significa que el programa iniciara a partir de aqu
     
     # Creamos el Updater y le pasamos el token de nuestro bot. Este se encargará de manejar las peticiones de los usuarios.
     # El 'udpater' es una variable
-    updater = Updater(token='token', use_context=True)
+    updater = Updater(token='TOKEN', use_context=True)
 
     # Obtenemos el Dispatcher para crear los comandos
     dp = updater.dispatcher
