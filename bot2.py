@@ -1,3 +1,5 @@
+import os
+
 from telegram.ext import Updater, CommandHandler, updater
 
 def Start(update, context):
@@ -8,7 +10,7 @@ def Help(update, context):
 
 if __name__ == '__main__':
 
-    updater = Updater(token='2097638862:AAEmflVzqB8L6ux6r02hDm10TMhpkVNSTVs', use_context=True)
+    updater = Updater(token='TOKEN', use_context=True)
     
     dp = updater.dispatcher
 
