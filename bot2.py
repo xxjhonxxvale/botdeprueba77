@@ -1,11 +1,12 @@
 import os
 import telegram
-from telegram.ext import Updater, CommandHandler, updater
+from telegram import Update, bot
+from telegram.ext import Updater, CommandHandler
 
-def Start(update, context):
+def start(update, context):
     update.message.reply_text("Hola, otra vez :')")
 
-def Help(update, context):
+def help(update, context):
     update.message.reply_text('Usa /qr para generar un codigo qr')
 
 if __name__ == '__main__':
@@ -18,7 +19,7 @@ if __name__ == '__main__':
     
     dp = updater.dispatcher
 
-    dp.add_handler(CommandHandler('Start', Start))
+    dp.add_handler(CommandHandler('Start', start))
 
     dp.add_handler(CommandHandler('Help', help))
 
