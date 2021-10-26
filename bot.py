@@ -1,8 +1,20 @@
 import os
 
-os.environ['TOKEN']
-from telegram import Update
+import telegram
+from telegram import Update, bot, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import dispatcher, Updater, CommandHandler, MessageHandler, Filters
+
+def handle_start(update, context):
+
+    update.message.reply_text(
+        text=(
+            'This bot has been migrated to a new one: @ForwarderGeniusBot.'
+            '\nGo there and run /start to continue'
+        ),
+        reply_markup=InlineKeyboardMarkup([
+            [InlineKeyboardButton(text='Go to the bot', url='https://t.me/ForwarderGeniusBot')]
+        ])
+    )
 
 # Configuramos el comando start para enviar un mensaje de bienvenida
 def start(update, context):
@@ -17,9 +29,13 @@ def echo(update, context):
 
 if __name__ == '__main__' :  #significa que el programa iniciara a partir de aqui
     
+    token = os.environ['TOKEN']
+
+    bot = telegram.Bot(token=token)
+
     # Creamos el Updater y le pasamos el token de nuestro bot. Este se encargará de manejar las peticiones de los usuarios.
     # El 'udpater' es una variable
-    updater = Updater(token='TOKEN', use_context=True)
+    updater = Updater(token=token, use_context=True)
 
     # Obtenemos el Dispatcher para crear los comandos
     dp = updater.dispatcher
