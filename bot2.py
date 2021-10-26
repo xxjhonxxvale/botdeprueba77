@@ -29,9 +29,9 @@ if __name__ == '__main__':
     dp.add_handler(ConversationHandler(
         entry_points=[
             ConversationHandler('qr', qr_command_handler)
-        ]
+        ],
 
-        states={}
+        states={},
 
         fallbacks=[]
 
